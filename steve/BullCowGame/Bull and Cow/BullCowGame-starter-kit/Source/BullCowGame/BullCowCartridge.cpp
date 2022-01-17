@@ -11,7 +11,7 @@ void UBullCowCartridge::BeginPlay() // When the game starts
     welcome = true;
     gameOver = false;
     lives = 5;
-    hiddenWord = "ravens";
+    hiddenWord = TEXT("ravens");
 
 }
 
