@@ -26,6 +26,7 @@ void UBullCowCartridge::OnInput(const FString& Input) // When the player hits en
         PrintLine(TEXT("Here's how the game works:"));
         PrintLine(TEXT("You need to guess the isogram! \nIt's as simple as that!"));
         PrintLine(TEXT("What's an isogram, you say? \nIt's a word with no repeated letters."));
+        PrintLine(TEXT("You will then be given information about your guess"));
         PrintLine(TEXT("Enter your guess to begin!"));
     }
     else
@@ -37,10 +38,27 @@ void UBullCowCartridge::OnInput(const FString& Input) // When the player hits en
                 PrintLine(TEXT("Wow! I didn't think it was possible!"));
                 PrintLine(TEXT("Awesome job getting the word!"));
                 PrintLine(TEXT("Come back again sometime!"));
+                gameOver = true;
             }
             else
             {
-                PrintLine(TEXT("Nope! The correct word was: " + hiddenWord));
+                bool valid = true;
+                if (valid)
+                {
+                    PrintLine(TEXT("Nope! That is not correct!"));
+                    lives--;
+                    if(lives > 0)
+                    {
+                        PrintLine(TEXT("Lives remaining: " + lives));
+                        PrintLine(TEXT("Guess again..."));
+                    }
+                    else
+                    {
+                        gameOver = true;
+                        PrintLine(TEXT("Bummer. You didn't get it."));
+                        PrintLine(TEXT("The word was: " + hiddenWord));
+                    }
+                }
             }
         }
     }
