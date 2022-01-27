@@ -17,5 +17,45 @@ class BULLCOWGAME_API UBullCowCartridge : public UCartridge
 
 	// Your declarations go below!
 	private:
+	//Boolean used to flag if the game has started or not
+	bool GameStarted = false;
+
+	//Welcome Message we print at the start of the game.
+	const FString WelcomeMessage = TEXT("Hello There, Welcome to Bulls Cow Game\nPress Enter to Have Fun!");
+
+	//Array of Hidden Words
+	FString HiddenWords[28]={
+		TEXT("house"),
+		TEXT("horse"),
+		TEXT("rakes"),
+		TEXT("cream"),
+		TEXT("dream"),
+		TEXT("trams"),
+		TEXT("hands"),
+		TEXT("forth"),
+		TEXT("sixth"),
+		TEXT("first"),
+		TEXT("flirt"),
+		TEXT("exact"),
+		TEXT("zebra"),
+		TEXT("lions"),
+		TEXT("cubes"),
+		TEXT("scare"),
+		TEXT("break"),
+		TEXT("pause"),
+		TEXT("print"),
+		TEXT("table"),
+		TEXT("shift"),
+		TEXT("forms"),
+		TEXT("tiger"),
+		TEXT("roast"),
+		TEXT("feast"),
+		TEXT("feats"),
+		TEXT("rouse"),
+		TEXT("mouse")
+	};
+
+	//Variable to Hold the Hidden Word
+	FString HiddenWord;
 	
 };
