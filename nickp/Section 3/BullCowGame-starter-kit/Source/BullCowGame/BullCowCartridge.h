@@ -21,7 +21,9 @@ class BULLCOWGAME_API UBullCowCartridge : public UCartridge
 	bool GameStarted = false;
 
 	//Welcome Message we print at the start of the game.
-	const FString WelcomeMessage = TEXT("Hello There, Welcome to Bulls Cow Game\nPress Enter to Have Fun!");
+	const FString WelcomeMessage = TEXT("Hello There, Welcome to Bulls Cow Game!!!!\nYou will be guessing a 5 letter word!\nPress Enter to Have Fun!");
+
+	//static ConstructorHelpers::FObjectFinder<USoundBase> Soundf(TEXT("/Content/Environment/Sounds/bling.wav"));
 
 	//Array of Hidden Words
 	FString HiddenWords[28]={
@@ -57,5 +59,11 @@ class BULLCOWGAME_API UBullCowCartridge : public UCartridge
 
 	//Variable to Hold the Hidden Word
 	FString HiddenWord;
+
+	//Variable to Hold the Last Hidden Word
+	FString LastHiddenWord;
+
+	//Variable to Hold Player Lives
+	int32 PlayerLives;
 	
 };
