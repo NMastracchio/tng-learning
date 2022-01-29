@@ -20,6 +20,6 @@ class BULLCOWGAME_API UBullCowCartridge : public UCartridge
 	private:
 	FString playerName;
 	bool welcome, gameOver;
-	int lives;
+	int32 lives;
 	FString hiddenWord;
 };
