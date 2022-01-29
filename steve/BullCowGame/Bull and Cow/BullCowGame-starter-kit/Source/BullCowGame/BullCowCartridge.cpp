@@ -49,8 +49,8 @@ void UBullCowCartridge::OnInput(const FString& Input) // When the player hits en
                     lives--;
                     if(lives > 0)
                     {
-                        //PrintLine(TEXT("Lives remaining: "));
-                        //PrintLine("" + lives);
+                        PrintLine(TEXT("Lives remaining: "));
+                        PrintLine("" + lives);
                         PrintLine(TEXT("Guess again..."));
                     }
                     else
