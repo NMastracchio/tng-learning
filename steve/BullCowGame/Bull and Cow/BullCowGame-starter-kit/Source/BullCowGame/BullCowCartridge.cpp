@@ -9,10 +9,7 @@ void UBullCowCartridge::BeginPlay() // When the game starts
     PrintLine(TEXT("\"If you ain't having fun...\n you must be full of bull!\""));
     PrintLine(TEXT("What's your name, buddy?"));
     welcome = true;
-    gameOver = false;
-    lives = 5;
-    hiddenWord = TEXT("ravens");
-
+    InitGame();
 }
 
 void UBullCowCartridge::OnInput(const FString& Input) // When the player hits enter
@@ -20,14 +17,7 @@ void UBullCowCartridge::OnInput(const FString& Input) // When the player hits en
     ClearScreen();
     if (welcome)
     {
-        playerName = Input;
-        welcome = false;
-        PrintLine(TEXT("Howdy there, " + playerName + "!"));
-        PrintLine(TEXT("Here's how the game works:"));
-        PrintLine(TEXT("You need to guess the isogram! \nIt's as simple as that!"));
-        PrintLine(TEXT("What's an isogram, you say? \nIt's a word with no repeated letters."));
-        PrintLine(TEXT("You will then be given information about your guess"));
-        PrintLine(TEXT("Enter your guess to begin!"));
+       Welcome(Input);
     }
     else
     {
@@ -63,5 +53,21 @@ void UBullCowCartridge::OnInput(const FString& Input) // When the player hits en
             }
         }
     }
-    
 }
+void UBullCowCartridge::InitGame()
+    {
+         gameOver = false;
+    lives = 5;
+    hiddenWord = TEXT("ravens");
+    }
+
+    void UBullCowCartridge::Welcome(const FString& Input){
+ playerName = Input;
+        welcome = false;
+        PrintLine(TEXT("Howdy there, " + playerName + "!"));
+        PrintLine(TEXT("Here's how the game works:"));
+        PrintLine(TEXT("You need to guess the isogram! \nIt's as simple as that!"));
+        PrintLine(TEXT("What's an isogram, you say? \nIt's a word with no repeated letters."));
+        PrintLine(TEXT("You will then be given information about your guess"));
+        PrintLine(TEXT("Enter your guess to begin!"));
+    }
